@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+ 
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          
+            <a class="navbar-brand" href="#">
+                <img src="{{ url_for('static', filename='images/logo1.png') }}" alt="Logo" width="80" height="80" class="d-inline-block align-top">
+            </a>
+            <a class="navbar-brand" href="#">Paraiso verde</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('main') }}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('historia') }}">Historia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('sitio') }}">Sitios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('hoteles') }}">Hoteles</a>
+                    </li>
+                    {% if 'user' in session %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('logout') }}">Cerrar sesión</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('login') }}">Iniciar sesión</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+      
+    <div id="carouselExampleFade" class="carousel slide carousel-fade mb-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+    
+            <!-- Slide 1 con fondo semitransparente en el texto -->
+            <div class="carousel-item active">
+                <img src="{{ url_for('static', filename='images/carrousel1.jpg') }}" class="d-block w-100" alt="san">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 bg-dark bg-opacity-50 p-3 rounded mt-4">
+                    <h2 class="text-uppercase fw-bold">Bienvenidos</h2>
+                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae totam dicta aliquid tempore, amet necessitatibus magni quibusdam?</p>
+                </div>
+            </div>
+    
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='images/carrousel2.jpg') }}" class="d-block w-100" alt="jo">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 bg-dark bg-opacity-50 p-3 rounded">
+                    <h3 class="text-uppercase fw-bold">Explora Jo</h3>
+                    <p>Descubre la belleza y tranquilidad de Jo, un lugar maravilloso para todos.</p>
+                </div>
+            </div>
+    
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='images/carrousel3.jpg') }}" class="d-block w-100" alt="se">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 bg-dark bg-opacity-50 p-3 rounded">
+                    <h2 class="hero__title">Experimenta las culturas nativas en Estados Unidos</h2>
+                    <div class="hero__view-more-button mt-2">
+                        <a target="_self" href="https://www.visittheusa.mx/experience/donde-experimentar-la-cultura-nativa-estadounidense" class="btn btn-primary" tabindex="0">Ver más</a>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    
+
+        </div>
+        
+        <!-- Controles de navegación del carrusel -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    
+      <div class="position-relative overflow-hidden">
+          <img 
+            src="{{ url_for('static', filename='images/paramo2.jpg') }}" 
+            class="img-fluid w-50" 
+            alt="Louvre Museum"
+          />
+          <div class="position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center" style="background-color: rgba(0, 0, 0, 0.6);">
+            <p class="text-white mb-0">Can you see me?</p>
+          </div>
+        </div>
+        
+      <div class="card-group mt-5 mb-5">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="{{ url_for('static', filename='images/paramo2.jpg') }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+  
+  
+  
+  
+       
+  
+  
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
